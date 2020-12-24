@@ -9,6 +9,8 @@ wait5Secs.then(data => console.log(data)).catch(err => console.error(err));
 
 
 
+
+
 // promise chỉ resolve hoặc reject duy nhất 1 lần
 // @ts-ignore
 const promise = new Promise((resolve, reject) => {
@@ -22,8 +24,8 @@ promise.then(data => console.log(data));
 
 
 
-//
-//
+
+
 //
 //
 // function httpGet(url: string): Promise<any> {
@@ -68,51 +70,51 @@ promise.then(data => console.log(data));
 //     .catch(function(reason) {
 //         console.error('Something went wrong', reason);
 //     });
-
-
-
-
-
-
-
-/**
- * Async/Await
- */
-async function f() {
-    return 1;
-}
-
-function fp() {
-    return Promise.resolve(1);
-}
-
-f().then(data => console.log('async fn', data));
-
-// @ts-ignore
-(async() => {
-    const data = await fp();
-    console.log('async/await', data);
-})();
-
-
-
-
-async function fns() {
-    const promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve("done!"), 1000)
-    });
-    // wait till the promise resolves (*)
-    const result = await promise;
-    console.log(result); // "done!"
-}
-
-fns();
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+// /**
+//  * Async/Await
+//  */
+// async function f() {
+//     return 1;
+// }
+//
+// function fp() {
+//     return Promise.resolve(1);
+// }
+//
+// f().then(data => console.log('async fn', data));
+//
+// // @ts-ignore
+// (async() => {
+//     const data = await fp();
+//     console.log('async/await', data);
+// })();
+//
+//
+//
+//
+// async function fns() {
+//     const promise = new Promise((resolve, reject) => {
+//         setTimeout(() => resolve("done!"), 1000)
+//     });
+//     // wait till the promise resolves (*)
+//     const result = await promise;
+//     console.log(result); // "done!"
+// }
+//
+// fns();
+//
+//
+//
+//
+//
+//
 // async function getUser(username: string) {
 //     try {
 //         const response = await fetch(
@@ -126,134 +128,134 @@ fns();
 // getUser('bob')
 //     .then(res => console.log(res))
 //     .catch(err => console.warn(err));
-
-
-
-
-
-
-
-// do not combine sync operations with async/await
-(() => {
-    let x = 0;
-    async function r5() {
-        x += 1;
-        console.log(x);
-        return 5;
-    }
-
-    (async () => {
-        x += await r5();
-        console.log(x);
-    })();
-})();
-
-// fixed version
-(() => {
-    let x = 0;
-    async function r5() {
-        x += 1;
-        console.log(x);
-        return 5;
-    }
-
-    (async () => {
-        const y = await r5();
-        x += y;
-        console.log(x);
-    })();
-})();
-
-
-
-
-
-// Too Sequential
-async function fetchAllBook() {
-    await new Promise(resolve => {
-        console.log('Waiting 2s...');
-        setTimeout(() => resolve(), 2000);
-    });
-    console.log('fetchAllBook');
-    return [
-        {
-            id: 'book-id-1',
-            authorId: 'author-id-1'
-        }, {
-            id: 'book-id-2',
-            authorId: 'author-id-2'
-        }, {
-            id: 'book-id-3',
-            authorId: 'author-id-3'
-        }
-    ];
-}
-
-async function fetchAuthorById(authorId: string) {
-    console.log('fetchAuthorById');
-    return {
-        authorId,
-    };
-}
-async function getBooksAndAuthor(authorId: string) {
-    const books = await fetchAllBook();
-    const author = await fetchAuthorById(authorId);
-    return {
-        author,
-        books: books.filter(book => book.authorId === authorId),
-    };
-}
-
-getBooksAndAuthor('author-id-2');
-
-
-
-
-
-
-
-
-
-
-
-
-async function fetchAllBook() {
-    await new Promise(resolve => {
-        console.log('Waiting 2s...');
-        setTimeout(() => resolve(), 2000);
-    });
-    console.log('fetchAllBook');
-    return [
-        {
-            id: 'book-id-1',
-            authorId: 'author-id-1'
-        }, {
-            id: 'book-id-2',
-            authorId: 'author-id-2'
-        }, {
-            id: 'book-id-3',
-            authorId: 'author-id-3'
-        }
-    ];
-}
-
-async function fetchAuthorById(authorId: string) {
-    console.log('fetchAuthorById');
-    return {
-        authorId,
-    };
-}
-
-// Too Sequential fixed
-async function getBooksAndAuthorFixed(authorId: string) {
-    const bookPromise = fetchAllBook();
-    const authorPromise = fetchAuthorById(authorId);
-    const books = await bookPromise;
-    const author = await authorPromise;
-    return {
-        author,
-        books: books.filter(book => book.authorId === authorId),
-    };
-}
-
-getBooksAndAuthorFixed('author-id-2');
+//
+//
+//
+//
+//
+//
+//
+// // do not combine sync operations with async/await
+// (() => {
+//     let x = 0;
+//     async function r5() {
+//         x += 1;
+//         console.log(x);
+//         return 5;
+//     }
+//
+//     (async () => {
+//         x += await r5();
+//         console.log(x);
+//     })();
+// })();
+//
+// // fixed version
+// (() => {
+//     let x = 0;
+//     async function r5() {
+//         x += 1;
+//         console.log(x);
+//         return 5;
+//     }
+//
+//     (async () => {
+//         const y = await r5();
+//         x += y;
+//         console.log(x);
+//     })();
+// })();
+//
+//
+//
+//
+//
+// // Too Sequential
+// async function fetchAllBook() {
+//     await new Promise(resolve => {
+//         console.log('Waiting 2s...');
+//         setTimeout(() => resolve(), 2000);
+//     });
+//     console.log('fetchAllBook');
+//     return [
+//         {
+//             id: 'book-id-1',
+//             authorId: 'author-id-1'
+//         }, {
+//             id: 'book-id-2',
+//             authorId: 'author-id-2'
+//         }, {
+//             id: 'book-id-3',
+//             authorId: 'author-id-3'
+//         }
+//     ];
+// }
+//
+// async function fetchAuthorById(authorId: string) {
+//     console.log('fetchAuthorById');
+//     return {
+//         authorId,
+//     };
+// }
+// async function getBooksAndAuthor(authorId: string) {
+//     const books = await fetchAllBook();
+//     const author = await fetchAuthorById(authorId);
+//     return {
+//         author,
+//         books: books.filter(book => book.authorId === authorId),
+//     };
+// }
+//
+// getBooksAndAuthor('author-id-2');
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// async function fetchAllBook() {
+//     await new Promise(resolve => {
+//         console.log('Waiting 2s...');
+//         setTimeout(() => resolve(), 2000);
+//     });
+//     console.log('fetchAllBook');
+//     return [
+//         {
+//             id: 'book-id-1',
+//             authorId: 'author-id-1'
+//         }, {
+//             id: 'book-id-2',
+//             authorId: 'author-id-2'
+//         }, {
+//             id: 'book-id-3',
+//             authorId: 'author-id-3'
+//         }
+//     ];
+// }
+//
+// async function fetchAuthorById(authorId: string) {
+//     console.log('fetchAuthorById');
+//     return {
+//         authorId,
+//     };
+// }
+//
+// // Too Sequential fixed
+// async function getBooksAndAuthorFixed(authorId: string) {
+//     const bookPromise = fetchAllBook();
+//     const authorPromise = fetchAuthorById(authorId);
+//     const books = await bookPromise;
+//     const author = await authorPromise;
+//     return {
+//         author,
+//         books: books.filter(book => book.authorId === authorId),
+//     };
+// }
+//
+// getBooksAndAuthorFixed('author-id-2');
