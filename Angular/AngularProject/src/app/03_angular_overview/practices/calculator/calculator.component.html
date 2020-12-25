@@ -1,0 +1,11 @@
+<div class="form-inline">
+<input type="number" class="form-control" (change)="changeNumber1($event.target.value)">
+<input type="number" class="form-control" (change)="changeNumber2($event.target.value)">
+<select class="form-control" (click)="calculate($event.target.value)">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="x">x</option>
+  <option value="/">/</option>
+</select>
+</div>
+<h3>KQ: {{result}}</h3>

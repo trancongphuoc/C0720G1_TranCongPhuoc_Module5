@@ -1,0 +1,9 @@
+
+
+
+
+<div class="form-inline">
+  <input type="color" class="form-control" style="width: 100px;" (change)="changeColor($event.target.value)">
+</div>
+<div style="width: 100px; height: 100px" [style.background] = color></div>
+
