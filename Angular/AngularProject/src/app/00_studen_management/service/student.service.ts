@@ -17,18 +17,30 @@ export class StudentService {
     return this.http.get('http://localhost:8080/api-student/list');
   }
 
+
   // getAllStudent(){
   //   return this.http.get('http://localhost:8080/api-student/list');
   // }
 
 
   createStudent(student: IStudent) {
-    const header = new Headers({'Content-Type': 'application/json' });
+    const header = new Headers({'Content-Type': 'application/json'});
 
     // @ts-ignore
     this.http.post('http://localhost:8080/api-student/create', student, header).toPromise().catch(err => console.log(err));
 
+  }
+
+
+  deleteStudent(id: number) {
+    this.http.delete('http://localhost:8080/api-student/delete/' + id).toPromise().catch(err => console.log(err));
+  }
+
+
+  saveStudent(student: IStudent) {
+    const header = new Headers({'Content-Type': 'application/json'});
+
     // @ts-ignore
-    this.router.navigate('/student');
+    this.http.put('http://localhost:8080/api-student/update', student, header).toPromise().catch(err => console.log(err));
   }
 }

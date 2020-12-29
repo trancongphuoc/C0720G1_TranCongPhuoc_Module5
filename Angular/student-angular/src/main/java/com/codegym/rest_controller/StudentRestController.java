@@ -37,5 +37,16 @@ public class StudentRestController {
     }
 
 
-    
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
+        studentService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PutMapping("/update")
+    public ResponseEntity<Void> updateStudent(@RequestBody Student student) {
+        studentService.save(student);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

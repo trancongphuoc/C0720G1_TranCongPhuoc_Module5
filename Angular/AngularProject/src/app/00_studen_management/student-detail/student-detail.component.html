@@ -21,19 +21,19 @@
             </div>
             <div class="row">
               <label for="" class="col-form-label col-3">ID</label>
-              <input type="text" class="form-control col-6" [value]="studentDetail.id" >
+              <input type="text" class="form-control col-6" [value]="studentDetail.id" readonly>
             </div>
             <div class="row">
               <label for="" class="col-form-label col-3">Name</label>
-              <input type="text" class="form-control col-6" [value]="studentDetail.name" >
+              <input type="text" class="form-control col-6" [value]="studentDetail.name" (change)="studentDetail.name = $event.target.value">
             </div>
             <div class="row">
               <label for="" class="col-form-label col-3">Date of birth</label>
-              <input type="text" class="form-control col-6" [value]="studentDetail.dateOfBirth" >
+              <input type="text" class="form-control col-6" [value]="studentDetail.dateOfBirth" (change)="studentDetail.dateOfBirth = $event.target.value">
             </div>
             <div class="row">
               <label for="" class="col-form-label col-3">Address</label>
-              <input type="text" class="form-control col-6" [value]="studentDetail.address" >
+              <input type="text" class="form-control col-6" [value]="studentDetail.address" (change)="studentDetail.address = $event.target.value">
             </div>
             <div class="row">
               <label for="" class="col-form-label col-3">Mark</label>
@@ -44,7 +44,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-danger" (click)="deleteStudent()">Delete</button>
+        <button data-dismiss="modal" class="btn btn-primary" (click)="update()">Save</button>
+        <a data-dismiss="modal" class="btn btn-danger" (click)="deleteStudent(); deleteabc()" routerLink="/student">Delete</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

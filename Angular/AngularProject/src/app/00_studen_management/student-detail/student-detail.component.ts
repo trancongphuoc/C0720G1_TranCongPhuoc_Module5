@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IStudent} from '../model/IStudent';
+import {StudentService} from '../service/student.service';
 
 @Component({
   selector: 'app-student-detail',
@@ -12,13 +13,24 @@ export class StudentDetailComponent implements OnInit {
 
   @Output() delete = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
   }
 
-  deleteStudent() {
+  deleteabc() {
     this.delete.emit(this.studentDetail.id);
   }
+
+  deleteStudent() {
+    this.studentService.deleteStudent(this.studentDetail.id);
+  }
+
+
+
+  update() {
+    this.studentService.saveStudent(this.studentDetail);
+  }
+
 
 }

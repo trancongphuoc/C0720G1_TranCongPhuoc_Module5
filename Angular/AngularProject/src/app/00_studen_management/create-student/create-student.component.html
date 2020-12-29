@@ -3,7 +3,7 @@
   <div class="form-group">
     <div class="row">
       <label for="" class="col-form-label col-3">Name</label>
-      <input type="text" class="form-control col-6" [(ngModel)]="student.name">
+      <input type="text" class="form-control col-6" (change)="student.name = $event.target.value" >
     </div>
   </div>
   <div class="form-group">

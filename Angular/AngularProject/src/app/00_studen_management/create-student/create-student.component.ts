@@ -10,7 +10,6 @@ import {StudentService} from '../service/student.service';
 export class CreateStudentComponent implements OnInit {
 
   student: IStudent = {
-    id: 10,
     name : '',
     dateOfBirth: '',
     address: '',

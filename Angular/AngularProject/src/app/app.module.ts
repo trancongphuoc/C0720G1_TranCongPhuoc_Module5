@@ -19,6 +19,7 @@ import { ChildComponent } from './00_test/test_output/child.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { CreateStudentComponent } from './00_studen_management/create-student/create-student.component';
 import {StudentService} from './00_studen_management/service/student.service';
+import { CountDownComponent } from './05_components_interaction/practices/count-down/count-down.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {StudentService} from './00_studen_management/service/student.service';
     LikeComponent,
     ParentComponent,
     ChildComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    CountDownComponent
   ],
     imports: [
         BrowserModule,

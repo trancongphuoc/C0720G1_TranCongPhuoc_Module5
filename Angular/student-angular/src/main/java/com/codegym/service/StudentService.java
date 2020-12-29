@@ -8,4 +8,6 @@ public interface StudentService {
     List<Student> findAll();
 
     void save(Student body);
+
+    void delete(Long id);
 }

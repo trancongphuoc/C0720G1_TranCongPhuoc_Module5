@@ -8,6 +8,7 @@ import {StudentComponent} from './00_studen_management/student/student.component
 import {HackerNewsComponent} from './04_angular_component_and_template/practices/hacker-news/hacker-news.component';
 import {ParentComponent} from './00_test/test_output/parent.component';
 import {CreateStudentComponent} from './00_studen_management/create-student/create-student.component';
+import {CountDownComponent} from './05_components_interaction/practices/count-down/count-down.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'student', component: StudentComponent},
   {path: 'hacker-news', component: HackerNewsComponent},
   {path: 'test-output', component: ParentComponent},
-  {path: 'create-student', component: CreateStudentComponent}
+  {path: 'create-student', component: CreateStudentComponent},
+  {path: 'count-down', component: CountDownComponent}
 ];
 
 
