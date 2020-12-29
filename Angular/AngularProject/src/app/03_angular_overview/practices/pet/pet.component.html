@@ -1,7 +1,7 @@
 <h2>Pet profile</h2>
 <label>
   Pet name:
-  <input type="text" (change)="updateName($event.target.value)">
+  <input type="text" (keyup)="updateName($event.target.value)">
 </label>
 <br >
 <label>
@@ -10,7 +10,7 @@
 </label>
 <label>
   Width image:
-  <input type="number" (change)="updateWidth($event.target.value)">
+  <input type="number" (keyup)="updateWidth($event.target.value)">
 </label>
 <br >
 <h3>Pet name: {{petName}}</h3>

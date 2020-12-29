@@ -3,4 +3,7 @@ export interface IStudent {
   name: string;
   dateOfBirth: string;
   address: string;
+  avatar: string;
+  mark: number;
+  status: boolean;
 }

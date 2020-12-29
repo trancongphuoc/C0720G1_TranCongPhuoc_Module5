@@ -1,0 +1,6 @@
+<div class="text-center" style="font-size: 30px" *ngFor="let article of articleList; index as i">
+  <label>{{i}}.</label>
+  <a href="{{article.url}}" target="_blank"> {{article.title}} </a>
+  <br>
+  <app-like></app-like>
+</div>

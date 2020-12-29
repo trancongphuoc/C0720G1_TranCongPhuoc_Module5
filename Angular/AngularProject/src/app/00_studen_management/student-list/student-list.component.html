@@ -1,0 +1,31 @@
+<h1 class="text-center mt-5 mb-5">Student list</h1>
+
+<table class="table table-hover table-dark">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Address</th>
+    <th>Mark</th>
+    <th>Status</th>
+    <th>Detail</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of studentList">
+    <td> {{student.id}} </td>
+    <td> <img src="{{student.avatar}}" width="50px" alt=""> </td>
+    <td> {{student.name}} </td>
+    <td> {{student.dateOfBirth}} </td>
+    <td> {{student.address}} </td>
+    <td> {{student.mark}} </td>
+    <td [style.color]="student.mark >= 5 ? 'green' : 'red'" > {{student.mark >= 5 ? 'Pass' : 'Fail'}} </td>
+    <td><a class="btn btn-outline-primary" data-toggle="modal" data-target="#modelId" (click)="getStudentDetail(student)">Detail</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<app-student-detail [studentDetail]="studentDetail" (delete)="deleteStudent($event)"></app-student-detail>
+
