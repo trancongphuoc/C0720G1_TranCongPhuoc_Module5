@@ -16,6 +16,9 @@ import { ArticleListComponent } from './04_angular_component_and_template/practi
 import { LikeComponent } from './04_angular_component_and_template/practices/like/like.component';
 import { ParentComponent } from './00_test/test_output/parent.component';
 import { ChildComponent } from './00_test/test_output/child.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { CreateStudentComponent } from './00_studen_management/create-student/create-student.component';
+import {StudentService} from './00_studen_management/service/student.service';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { ChildComponent } from './00_test/test_output/child.component';
     ArticleListComponent,
     LikeComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    CreateStudentComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
-  providers: [],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

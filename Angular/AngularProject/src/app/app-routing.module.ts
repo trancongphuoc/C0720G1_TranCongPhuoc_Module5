@@ -7,6 +7,8 @@ import {ChooseColorComponent} from './03_angular_overview/practices/choose-color
 import {StudentComponent} from './00_studen_management/student/student.component';
 import {HackerNewsComponent} from './04_angular_component_and_template/practices/hacker-news/hacker-news.component';
 import {ParentComponent} from './00_test/test_output/parent.component';
+import {CreateStudentComponent} from './00_studen_management/create-student/create-student.component';
+
 
 
 const routes: Routes = [
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path: 'color', component: ChooseColorComponent},
   {path: 'student', component: StudentComponent},
   {path: 'hacker-news', component: HackerNewsComponent},
-  {path: 'test-output', component: ParentComponent}
+  {path: 'test-output', component: ParentComponent},
+  {path: 'create-student', component: CreateStudentComponent}
 ];
 
 

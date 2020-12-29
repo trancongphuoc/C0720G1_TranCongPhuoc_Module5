@@ -20,4 +20,5 @@ export class StudentDetailComponent implements OnInit {
   deleteStudent() {
     this.delete.emit(this.studentDetail.id);
   }
+
 }
