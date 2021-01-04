@@ -1,0 +1,66 @@
+<h2 class="text-center mt-2 ">Customer List</h2>
+
+<div class="container">
+  <app-customer-create></app-customer-create>
+  <div class="d-flex">
+
+    <input (keyup)="search($event.target.value)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="button">Search</button>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th>Customer type</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td> {{customer.id}} </td>
+      <td> {{customer.name}} </td>
+      <td> {{customer.address}} </td>
+      <td> {{customer.phoneNumber}} </td>
+      <td> {{customer.email}} </td>
+      <td> {{customer.customerType.name}} </td>
+      <td>
+        <button class="btn btn-outline-primary" (click)="returnCustomer(customer)" data-bs-toggle="modal"
+                data-bs-target="#modalUpdate">Update
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="returnCustomer(customer)" data-bs-toggle="modal"
+                data-bs-target="#modalDelete">Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li *ngIf="page > 1" class="page-item">
+        <a class="page-link" aria-label="Previous" (click)="page = page -1; getAllCustomerHavePagination()">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item disabled"><a class="page-link"> {{page}} </a></li>
+      <li class="page-item">
+        <a class="page-link" aria-label="Next" (click)="page = page + 1; getAllCustomerHavePagination()">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<app-customer-update [customer]=customerUpdate></app-customer-update>
+
+<app-customer-delete [customer]=customerUpdate></app-customer-delete>

@@ -1,0 +1,48 @@
+<h1 class="text-center">Form sign up</h1>
+<div class="container mt-5 mb-5">
+  <div class="container">
+<!--    <form #formCreate = "ngForm" (ngSubmit)="onSubmit(formCreate)">-->
+<!--    <div class="form-group">-->
+<!--      <div class="row">-->
+<!--      <label for="email" class="col-form-label col-2">Email</label>-->
+<!--      <input ngModel name="email" type="text" id="email" class="form-control col-6">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <div class="row">-->
+<!--        <label for="password" class="col-form-label col-2">Password</label>-->
+<!--        <input ngModel name="password" type="password" id="password" class="form-control col-6">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--      <div class="form-group">-->
+<!--        <div class="row">-->
+<!--          <label for="repeat-password" class="col-form-label col-2">Password</label>-->
+<!--          <input ngModel name="repeatPassword" type="password" id="repeat-password" class="form-control col-6">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <button>Submit</button>-->
+<!--    </form>-->
+    <form [formGroup]="contractForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <div class="row">
+          <label for="email" class="col-form-label col-2">Email</label>
+          <input ngModel name="email" formControlName="email" type="text" id="email" class="form-control col-6">
+        </div>
+        <p  style="color: red" *ngIf="contractForm.get('email').errors.required && contractForm.touched">Email is not valid</p>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label for="password" class="col-form-label col-2">Password</label>
+          <input ngModel name="password" formControlName="password" type="password" id="password" class="form-control col-6">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label for="repeat-password" class="col-form-label col-2">Password</label>
+          <input ngModel name="repeatPassword" formControlName="repeatPassword" type="password" id="repeat-password" class="form-control col-6">
+        </div>
+      </div>
+      <button class="btn btn-outline-success" [disabled]="!contractForm.valid" >Submit</button>
+    </form>
+  </div>
+</div>

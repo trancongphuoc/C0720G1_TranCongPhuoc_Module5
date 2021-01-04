@@ -1,0 +1,82 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "phuoc dep trai",
+      "dateOfBirth": "2000-01-01",
+      "gender": true,
+      "address": "Le Thuy",
+      "idCard": "044200002961",
+      "phoneNumber": "0944524",
+      "email": "teosake.1999@gmail.co4",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tran Cong Phuoc",
+      "dateOfBirth": "2000-01-01",
+      "gender": "false",
+      "address": "Quang BInh",
+      "idCard": "044200002962",
+      "phoneNumber": "0944524136",
+      "email": "teopro@gmail.com",
+      "customerType": {
+        "id": 4,
+        "name": "Diamond"
+      }
+    },
+    {
+      "name": "Hoang Tu",
+      "dateOfBirth": "20000-03-05",
+      "gender": true,
+      "address": "Quang Nam",
+      "idCard": "04452362512",
+      "phoneNumber": "0944524136",
+      "email": "hoangtu@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Sliver"
+      },
+      "id": 4
+    },
+    {
+      "name": "Thanh Luyen",
+      "dateOfBirth": "1992-06-05",
+      "gender": true,
+      "address": "Quang Tri",
+      "idCard": "045236251478",
+      "phoneNumber": "094512362541",
+      "email": "luyen@gmail.com",
+      "customerType": {
+        "id": 1,
+        "name": "Member"
+      },
+      "id": 5
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Member"
+    },
+    {
+      "id": 2,
+      "name": "Sliver"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Diamond"
+    },
+    {
+      "id": 5,
+      "name": "Platinum"
+    }
+  ]
+}

@@ -1,8 +1,11 @@
+<div class="justify-content-center">
 <input type="text" [(ngModel)]="value">
-<button (click)="start()">Click</button>
+
 <br>
 <input class="text-center" type="range" [(ngModel)]="value"   width="300px">
 <h1 class="text-center">{{value > 0 ? value : 'Set time'}}</h1>
+<button (click)="start()">Start</button>
 <button (click)="stop()">Stop</button>
 <button (click)="resume()">Resume</button>
-
+<button (click)="acceleration()">Acceleration</button>
+</div>

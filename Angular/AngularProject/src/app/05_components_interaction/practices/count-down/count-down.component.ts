@@ -11,17 +11,20 @@ export class CountDownComponent implements OnInit {
 
   interval;
 
+  time = 100;
+
   constructor() { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   start() {
+    clearInterval(this.interval);
+
+    this.time = 100;
+
     if (this.value <= 0) {
       return;
     }
-
 
     this.interval = setInterval( () => {
 
@@ -31,18 +34,34 @@ export class CountDownComponent implements OnInit {
         clearInterval(this.interval);
         this.value = 0;
       }
-
-    }, 100);
+    }, this.time);
   }
-
 
   stop() {
-    clearTimeout(this.interval);
+    clearInterval(this.interval);
+    // clearTimeout(this.interval);
   }
-
 
   resume() {
     this.start();
   }
 
+  acceleration() {
+    clearInterval(this.interval);
+    this.time /= 2;
+
+    if (this.value <= 0) {
+      return;
+    }
+
+    this.interval = setInterval( () => {
+
+      this.value -= 0.1;
+
+      if (this.value <= 0) {
+        clearInterval(this.interval);
+        this.value = 0;
+      }
+    }, this.time );
+  }
 }

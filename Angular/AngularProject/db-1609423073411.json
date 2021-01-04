@@ -1,0 +1,94 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Jin",
+      "dateOfBirth": "2020-12-27",
+      "address": "Nagasaki",
+      "mark": 6,
+      "avatar": "https://i.pinimg.com/280x280_RS/42/44/30/424430fd0c68020695ede3ca3f27fc53.jpg",
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "Rengar",
+      "dateOfBirth": "2020-12-29",
+      "address": "Summer",
+      "mark": 8,
+      "avatar": "https://i.pinimg.com/474x/ca/28/c7/ca28c7b21c11ae90bd0ad8be56271ef5.jpg",
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Gragas",
+      "dateOfBirth": "2020-12-27",
+      "address": "Busan",
+      "mark": 3,
+      "avatar": "https://i.pinimg.com/originals/1c/e7/35/1ce735234028c718c8a29f7989ffbb8c.jpg",
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "Plani",
+      "dateOfBirth": "2020-12-27",
+      "address": "'Pleiku",
+      "mark": 7,
+      "avatar": "https://i.pinimg.com/474x/ca/28/c7/ca28c7b21c11ae90bd0ad8be56271ef5.jpg",
+      "status": true
+    },
+    {
+      "id": 5,
+      "name": "Yasuo",
+      "dateOfBirth": "2020-12-26",
+      "address": "England",
+      "mark": 2,
+      "avatar": "https://i.pinimg.com/280x280_RS/42/44/30/424430fd0c68020695ede3ca3f27fc53.jpg",
+      "status": false
+    },
+    {
+      "id": "6",
+      "name": "Luyện Óc Chó",
+      "dateOfBirth": "1996-02-01",
+      "address": "Quảng nam",
+      "mark": "1",
+      "avatar": null,
+      "status": null
+    },
+    {
+      "id": "7",
+      "name": "Luyện Óc Chó 2",
+      "dateOfBirth": "1999-05-03",
+      "address": "Đà Nẵng",
+      "mark": "2",
+      "avatar": null,
+      "status": null
+    },
+    {
+      "id": "123",
+      "name": null,
+      "dateOfBirth": "undefined-undefined-function String() { [native code] }",
+      "address": null,
+      "mark": null,
+      "avatar": null,
+      "status": null
+    },
+    {
+      "id": "124",
+      "name": null,
+      "dateOfBirth": "2020-12-05",
+      "address": null,
+      "mark": null,
+      "avatar": null,
+      "status": null
+    },
+    {
+      "id": "156",
+      "name": "aaaa",
+      "dateOfBirth": "2020-12-19",
+      "address": null,
+      "mark": null,
+      "avatar": null,
+      "status": null
+    }
+  ]
+}

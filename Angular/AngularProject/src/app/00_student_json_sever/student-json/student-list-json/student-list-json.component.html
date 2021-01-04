@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center mt-5 mb-5">Student List</h1>
+  <button class="btn btn-outline-success" data-toggle="modal" data-target="#modelCreate">Register new Student</button>
+  <table class="table text-light">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Info detail</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of studentList">
+      <td> {{s.id}} </td>
+      <td> {{s.name}} </td>
+      <td> {{s.address}} </td>
+      <td [style.color]="s.mark >= 5 ? 'green' : 'red' "> {{s.mark >= 5 ? 'Pass' : 'Fail'}} </td>
+      <td><button class="btn btn-outline-success" data-toggle="modal" data-target="#modelId" (click)="getStudent(s)">Detail</button></td>
+      <td><button class="btn btn-outline-primary" data-toggle="modal" data-target="#modelUpdate" [routerLink]="['/update-student',s.id]">Update</button></td>
+      <td><button class="btn btn-outline-danger" data-toggle="modal" data-target="#modelDelete" (click)="getStudent(s)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-student-detail-json [student]="student"></app-student-detail-json>
+<app-student-create-json (create)="onLoad()"></app-student-create-json>
+<app-student-delete-json (onLoad)="onLoad()" [student]="student" ></app-student-delete-json>
+<!--<app-student-update-json></app-student-update-json>-->
