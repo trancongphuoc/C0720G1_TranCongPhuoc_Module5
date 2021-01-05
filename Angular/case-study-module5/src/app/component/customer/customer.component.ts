@@ -3,6 +3,8 @@ import {CustomerService} from '../../service/customer.service';
 import {ICustomer} from '../../model/customer';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {ICustomerType} from '../../model/customer-type';
+import { MatDialog } from '@angular/material/dialog';
+import {CustomerDeleteDialogComponent} from './customer-delete-dialog/customer-delete-dialog.component';
 
 @Component({
   selector: 'app-customer',
@@ -18,7 +20,8 @@ export class CustomerComponent implements OnInit, OnChanges {
   page = 1;
 
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
    this.getAllCustomerHavePagination();
@@ -51,4 +54,15 @@ export class CustomerComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log('abc');
   }
+
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(CustomerDeleteDialogComponent, {
+  //     width: '250px',
+  //     data: {name: 'tèo'}
+  //   });
+  //
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 }

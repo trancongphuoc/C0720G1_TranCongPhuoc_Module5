@@ -18,9 +18,10 @@ Create new Customer
         <div class="form-group">
           <div class="row">
             <label for="" class="col-form-label ">Name<span class="text-danger">*</span> </label>
-            <label class="text-danger" *ngIf="customerCreateForm.get('name').hasError('required') && customerCreateForm.get('name').touched">Name is not empty</label>
-            <label class="text-danger" *ngIf="customerCreateForm.get('name').hasError('pattern') && customerCreateForm.get('name').touched">Name is not correct format</label>
-            <label class="text-danger" *ngIf="customerCreateForm.get('name').hasError('minLength') && customerCreateForm.get('name').touched">Name length > 6</label>
+            <div *ngIf="customerCreateForm.get('name').touched">
+            <p class="text-danger" *ngIf="customerCreateForm.get('name').hasError('required') ">Name is not empty</p>
+            <p class="text-danger" *ngIf="customerCreateForm.get('name').hasError('pattern') || customerCreateForm.get('name').hasError('minlength') ">Name is not correct format and Name length > 6</p>
+            </div>
             <input [class]="customerCreateForm.controls.name.invalid && customerCreateForm.controls.name.touched ? 'border-danger' : ''" type="text" class="form-control col-6" formControlName="name">
           </div>
         </div>

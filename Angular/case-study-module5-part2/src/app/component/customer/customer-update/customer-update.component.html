@@ -1,0 +1,71 @@
+<div class="container">
+  <h1 class="text-center mt-3">Tạo mới khách hàng</h1>
+  <form [formGroup]="formCreateCustomer" (ngSubmit)="onSubmit()">
+    <div class="mx-5 row">
+      <div class="col-6">
+        <div>
+          <label for="" class="col-form-label">Tên khách hàng<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('name').invalid && formCreateCustomer.get('name').touched ? 'border-danger' : ''" formControlName="name" class="form-control" type="text" placeholder="Nhập tên khách hàng">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('name').hasError('required') && formCreateCustomer.get('name').touched">Tên khách hàng không được để trống</p>
+        <div>
+          <label for="" class="col-form-label">Ngày sinh<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('dateOfBirth').invalid && formCreateCustomer.get('dateOfBirth').touched ? 'border-danger' : ''"  formControlName="dateOfBirth" class="form-control" type="date" placeholder="Nhập ngày sinh">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('dateOfBirth').hasError('required') && formCreateCustomer.get('dateOfBirth').touched">Ngày sinh khách hàng không được để trống</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('dateOfBirth').hasError('checkAge') && formCreateCustomer.get('dateOfBirth').touched">Tuổi của bạn phải nằm trong khoảng 18 - 120</p>
+        <div>
+          <label for="" class="col-form-label">Địa chỉ<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('address').invalid && formCreateCustomer.get('address').touched ? 'border-danger' : ''" formControlName="address" class="form-control" type="text" placeholder="Nhập địa chỉ">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('address').hasError('required') && formCreateCustomer.get('address').touched">Địa chỉ khách hàng không được để trống</p>
+        <div>
+          <label for="" class="col-form-label">Giới tính<span class="text-danger">*</span></label>
+          <select [class]="formCreateCustomer.get('gender').invalid && formCreateCustomer.get('gender').touched ? 'border-danger' : ''" formControlName="gender" class="form-control">
+            <option value="">Chọn giới tính</option>
+            <option value=null>Chưa xác định</option>
+            <option value="true">Nam</option>
+            <option value="false">Nữ</option>
+          </select>
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('gender').hasError('required') && formCreateCustomer.get('gender').touched">Giới tính khách hàng không được để trống.</p>
+      </div>
+      <div class="col-6">
+        <div class="">
+          <label for="" class="col-form-label">Số CMND<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('idCard').invalid && formCreateCustomer.get('idCard').touched ? 'border-danger' : ''" formControlName="idCard" class="form-control" type="text" placeholder="Nhập số CMND">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('idCard').hasError('required') && formCreateCustomer.get('idCard').touched">CMND khách hàng không được để trống.</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('idCard').hasError('pattern') && (formCreateCustomer.get('idCard').touched )">CMND không đúng định dạng. (...)</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('idCard').hasError('duplicateIdCard') && formCreateCustomer.get('idCard').touched">CMND đã tồn tại.</p>
+        <div class="">
+          <label for="" class="col-form-label">Số điện thoại<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('phoneNumber').invalid && formCreateCustomer.get('phoneNumber').touched ? 'border-danger' : ''" formControlName="phoneNumber" class="form-control" type="text" placeholder="Nhập số điện thoại">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('phoneNumber').hasError('required') && formCreateCustomer.get('phoneNumber').touched">Số điện thoại khách hàng không được để trống.</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('phoneNumber').hasError('pattern') && formCreateCustomer.get('phoneNumber').touched">Số điện thoại không đúng định dạng. (...)</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('phoneNumber').hasError('duplicatePhoneNumber') && formCreateCustomer.get('phoneNumber').touched">Số điện thoại đã được sử dụng.</p>
+        <div class="">
+          <label for="" class="col-form-label">Email<span class="text-danger">*</span></label>
+          <input [class]="formCreateCustomer.get('email').invalid && formCreateCustomer.get('email').touched ? 'border-danger' : ''" formControlName="email" class="form-control" type="text" placeholder="Nhập email">
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('email').hasError('required') && formCreateCustomer.get('email').touched">Email khách hàng không được để trống.</p>
+        <p class="text-danger errors" *ngIf="(formCreateCustomer.get('email').hasError('pattern') || formCreateCustomer.get('email').hasError('maxlength')) && formCreateCustomer.get('email').touched">Email không đúng định dạng và phải nằm trong khoảng 6 - 30 ký tự (...)</p>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('email').hasError('duplicateEmail') && formCreateCustomer.get('email').touched">Email đã tồn tại.</p>
+        <div class="">
+          <label for="" class="col-form-label">Loại khách hàng<span class="text-danger">*</span></label>
+          <select [class]="formCreateCustomer.get('customerType').invalid && formCreateCustomer.get('customerType').touched ? 'border-danger' : ''" formControlName="customerType" class="form-control">
+            <option value="">Chọn loại khách hàng</option>
+            <option *ngFor="let customerType of customerTypeList"
+                    [value]="customerType.id"> {{customerType.name}} </option>
+          </select>
+        </div>
+        <p class="text-danger errors" *ngIf="formCreateCustomer.get('customerType').hasError('required') && formCreateCustomer.get('customerType').touched">Loại khách hàng không được để trống</p>
+      </div>
+    </div>
+    <div class="d-flex mx-5 mt-4 justify-content-end">
+      <button class="btn btn-outline-primary" routerLink="/customer">Quay lại</button>
+      <button class="btn btn-outline-success">Xác Nhận</button>
+    </div>
+  </form>
+</div>

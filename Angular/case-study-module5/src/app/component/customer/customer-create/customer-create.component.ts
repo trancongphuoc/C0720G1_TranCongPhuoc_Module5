@@ -12,6 +12,12 @@ import {CustomerComponent} from '../customer.component';
   templateUrl: './customer-create.component.html',
   styleUrls: ['./customer-create.component.scss']
 })
+
+// function checkDateOfBirth(f: FormControl) {
+//   const v = f.value;
+//
+// }
+
 export class CustomerCreateComponent implements OnInit {
 
   private customerType: ICustomerType;
