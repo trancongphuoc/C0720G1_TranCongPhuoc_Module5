@@ -1,0 +1,47 @@
+<h1 class="text-center mt-3 mb-4">Danh sách khách hàng</h1>
+
+<div class="d-flex justify-content-around">
+  <button routerLink="/employee/create" class="btn btn-success">Tạo mới nhân viên</button>
+  <div class="d-flex justify-content-end">
+    <input class="form-control col-6 border-dark" type="search" placeholder="Nhập tên nhân viên">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-hover mt-4">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Số điện thoại</th>
+      <th>Email</th>
+      <th>Vị trí</th>
+      <th>Trình độ</th>
+      <th>Bộ phận</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employeeList">
+      <td> {{employee.id}} </td>
+      <td> {{employee.name}} </td>
+      <td> {{employee.phoneNumber}} </td>
+      <td> {{employee.email}} </td>
+      <td> {{employee.position.name}} </td>
+      <td> {{employee.level.name}} </td>
+      <td> {{employee.division.name}} </td>
+      <td> <button class="btn btn-primary" [routerLink]="'update/'+employee.id" style="margin-right: 10px"><i class="fa fa-edit"></i></button> <button class="btn btn-danger" style="margin-right: 10px"><i class="fa fa-recycle"></i></button> <button class="btn btn-info" [routerLink]="'detail/'+employee.id"><i class="fa fa-user"></i></button> </td>
+    </tr>
+    </tbody>
+  </table>
+<!--  <nav class="d-flex justify-content-center page" >-->
+<!--    <ul class="pagination">-->
+<!--      <li class="page-item"><button *ngIf="page > 1" (click)="page = page - 1; getAllCustomerHavePagination()" class="page-link bg-dark text-light" style="width: 100px">Previous</button></li>-->
+<!--      <li class="page-item active "><button class="page-link" style="background-color: black !important; border: 1px solid black" >{{page}}</button></li>-->
+<!--      <li class="page-item"><button *ngIf="check"  (click)="page = page + 1; getAllCustomerHavePagination()" class="page-link bg-dark text-light" style="width: 100px">Next</button></li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+</div>
+
+

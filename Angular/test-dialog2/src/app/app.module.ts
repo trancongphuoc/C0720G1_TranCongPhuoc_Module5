@@ -11,7 +11,7 @@ import {MaterialModule} from './material/material.module';
   declarations: [
     AppComponent,
     FatherComponent,
-    ChildrenComponent
+    ChildrenComponent,
   ],
   imports: [
     BrowserModule,

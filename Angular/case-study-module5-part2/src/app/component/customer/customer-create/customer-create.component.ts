@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../../../service/customer.service';
 import {CustomerTypeService} from '../../../service/customer-type.service';
 import {ICustomerType} from '../../../model/customer-type';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ICustomer} from '../../../model/customer';
 import {checkDuplicatePhoneNumber} from '../../../validator/check-duplicate-phone-number';
 import {checkDuplicateIdCard} from '../../../validator/check-duplicate-id-card';
 import {checkDuplicateEmail} from '../../../validator/check-duplicate-email';
 import {checkDateOfBirth} from '../../../validator/check-date-of-birth';
+import {ToastrService} from 'ngx-toastr';
+import {ShowToastr} from '../../../common/show-toastr';
 
 @Component({
   selector: 'app-customer-create',
@@ -28,7 +30,9 @@ export class CustomerCreateComponent implements OnInit {
   constructor(private customerService: CustomerService,
               private customerTypeService: CustomerTypeService,
               private fb: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private toastr: ToastrService,
+              private showToastr: ShowToastr) { }
 
   ngOnInit(): void {
 
@@ -52,12 +56,12 @@ export class CustomerCreateComponent implements OnInit {
 
     }, error => console.log(error));
 
-
   }
+
 
   onSubmit() {
     if (this.formCreateCustomer.invalid) {
-      alert('Vui lòng nhập đúng định dạng tất cả các trường');
+      this.showToastr.showToastrRegisterError();
       console.log( new Date().getFullYear() - new Date(this.formCreateCustomer.value.dateOfBirth).getFullYear() );
     } else {
 
@@ -72,8 +76,6 @@ export class CustomerCreateComponent implements OnInit {
       }
 
 
-
-
       // Check customerType có tồn tại hay không
       if (check === false) {
         alert('&*&@#^$&^@#*&$^*@#^$*&^@#&*$^@&*#$^&*@#^$*&@#^');
@@ -83,9 +85,10 @@ export class CustomerCreateComponent implements OnInit {
 
       this.customerService.create(this.formCreateCustomer.value).subscribe(data => {
         this.router.navigateByUrl('/customer');
-
-        alert('Thêm mới thành công.');
-      });
+      }, error => console.log(error),
+        () => {
+        this.showToastr.showToastrRegisterSuccess();
+        });
     }
   }
 }

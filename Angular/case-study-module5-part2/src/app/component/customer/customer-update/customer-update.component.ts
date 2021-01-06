@@ -9,6 +9,7 @@ import {checkDateOfBirth} from '../../../validator/check-date-of-birth';
 import {checkDuplicatePhoneNumber} from '../../../validator/check-duplicate-phone-number';
 import {checkDuplicateIdCard} from '../../../validator/check-duplicate-id-card';
 import {checkDuplicateEmail} from '../../../validator/check-duplicate-email';
+import {ShowToastr} from '../../../common/show-toastr';
 
 @Component({
   selector: 'app-customer-update',
@@ -31,7 +32,8 @@ export class CustomerUpdateComponent implements OnInit {
               private customerTypeService: CustomerTypeService,
               private fb: FormBuilder,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private showToastr: ShowToastr) { }
 
   ngOnInit(): void {
 
@@ -67,7 +69,7 @@ export class CustomerUpdateComponent implements OnInit {
 
   onSubmit() {
     if (this.formCreateCustomer.invalid) {
-      alert('Vui lòng nhập đúng định dạng tất cả các trường');
+      this.showToastr.showToastrUpdateError();
     } else {
 
       // Gán lại customer Type
@@ -91,7 +93,7 @@ export class CustomerUpdateComponent implements OnInit {
 
       this.customerService.update(this.formCreateCustomer.value, this.idCustomer).subscribe(data => {
         this.router.navigateByUrl('/customer');
-        alert('Update thành công.');
+        this.showToastr.showToastrUpdateSuccess();
       });
     }
   }

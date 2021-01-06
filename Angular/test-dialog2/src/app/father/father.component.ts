@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ChildrenComponent} from '../children/children.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-father',
@@ -9,7 +10,8 @@ import {ChildrenComponent} from '../children/children.component';
 })
 export class FatherComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -23,5 +25,16 @@ export class FatherComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(name);
     });
+  }
+
+  showToastr() {
+    setTimeout(() => {
+      this.toastr.error('Some message', 'title', {
+        timeOut: 500,
+        progressBar: false,
+        progressAnimation: 'increasing'
+      });
+    }, 1000);
+
   }
 }

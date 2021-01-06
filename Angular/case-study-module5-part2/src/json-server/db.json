@@ -9,8 +9,8 @@
       "email": "teopro@gmail.com",
       "gender": "false",
       "customerType": {
-        "id": 4,
-        "name": "Diamond"
+        "id": 5,
+        "name": "Platinum"
       },
       "id": 2
     },
@@ -99,20 +99,6 @@
       "id": 9
     },
     {
-      "name": "Tiến",
-      "dateOfBirth": "1994-06-05",
-      "address": "Pleiku",
-      "phoneNumber": "0944526325",
-      "idCard": "044265232521",
-      "email": "tien@gmail.com",
-      "gender": "true",
-      "customerType": {
-        "id": 3,
-        "name": "Gold"
-      },
-      "id": 10
-    },
-    {
       "name": "Hoàng Luện",
       "dateOfBirth": "2000-01-01",
       "address": "Quảng Nam",
@@ -125,6 +111,34 @@
         "name": "Diamond"
       },
       "id": 11
+    },
+    {
+      "name": "Nguyễn Ngọc Ngạn",
+      "dateOfBirth": "1990-06-05",
+      "address": "Hà Nội",
+      "phoneNumber": "0906312456",
+      "idCard": "052352361452",
+      "email": "nguyenngocngan@gmail.com",
+      "gender": "false",
+      "customerType": {
+        "id": 5,
+        "name": "Platinum"
+      },
+      "id": 12
+    },
+    {
+      "name": "Nguyên Lương Phúc",
+      "dateOfBirth": "1993-09-15",
+      "address": "Đà Nẵng",
+      "phoneNumber": "0901234560",
+      "idCard": "044200002221",
+      "email": "phuccc@gmail.com",
+      "gender": "true",
+      "customerType": {
+        "id": 5,
+        "name": "Platinum"
+      },
+      "id": 13
     }
   ],
   "customerType": [
@@ -147,6 +161,1046 @@
     {
       "id": 5,
       "name": "Platinum"
+    }
+  ],
+  "employee": [
+    {
+      "name": "Tran Cong Phuoc",
+      "dateOfBirth": "2000-01-01",
+      "address": "Quang BInh",
+      "phoneNumber": "0944524136",
+      "idCard": "044200002962",
+      "email": "teopro@gmail.com",
+      "gender": "false",
+      "position": {
+        "id": 6,
+        "name": "Giám đốc"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 4,
+        "name": "Quản lí"
+      },
+      "id": 2
+    },
+    {
+      "name": "Hoang Tu",
+      "dateOfBirth": "20000-03-05",
+      "gender": "true",
+      "address": "Quang Nam",
+      "idCard": "04452362512",
+      "phoneNumber": "0944524136",
+      "email": "hoangtu@gmail.com",
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "level": {
+        "id": 3,
+        "name": "Đại học"
+      },
+      "division": {
+        "id": 3,
+        "name": "Phục vụ"
+      },
+      "id": 4
+    },
+    {
+      "name": "Thanh Luyen",
+      "dateOfBirth": "1992-06-05",
+      "gender": "true",
+      "address": "Quang Tri",
+      "idCard": "045236251478",
+      "phoneNumber": "094512362541",
+      "email": "luyen@gmail.com",
+      "position": {
+        "id": 4,
+        "name": "Giám sát"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 4,
+        "name": "Quản lí"
+      },
+      "id": 5
+    },
+    {
+      "name": "Trần Công Phước",
+      "dateOfBirth": "2000-01-01",
+      "address": "Lê Thủy - Quảng Bình",
+      "phoneNumber": "0944524135",
+      "idCard": "044200002961",
+      "email": "teo@gmail.com",
+      "gender": "true",
+      "position": {
+        "id": 2,
+        "name": "Phục vụ"
+      },
+      "level": {
+        "id": 2,
+        "name": "Cao đẳng"
+      },
+      "division": {
+        "id": 3,
+        "name": "Phục vụ"
+      },
+      "id": 6
+    },
+    {
+      "name": "Hoàng",
+      "dateOfBirth": "1996-05-03",
+      "address": "Nghệ An",
+      "phoneNumber": "0256321412",
+      "idCard": "052306320412",
+      "email": "hoang@gmail.com",
+      "gender": "true",
+      "position": {
+        "id": 2,
+        "name": "Phục vụ"
+      },
+      "level": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "division": {
+        "id": 3,
+        "name": "Phục vụ"
+      },
+      "id": 7
+    },
+    {
+      "name": "Ngân",
+      "dateOfBirth": "1999-03-06",
+      "address": "Hà Tĩnh",
+      "phoneNumber": "0944524145",
+      "idCard": "044200003625",
+      "email": "ngan@gmail.com",
+      "gender": "false",
+      "position": {
+        "id": 5,
+        "name": "Quản lí"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 4,
+        "name": "Quản lí"
+      },
+      "id": 8
+    },
+    {
+      "name": "Khánh Ly",
+      "dateOfBirth": "2000-10-18",
+      "address": "Lệ Thủy",
+      "phoneNumber": "0826605655",
+      "idCard": "044525252525",
+      "email": "khanhly@gmail.com",
+      "gender": "false",
+      "position": {
+        "id": 3,
+        "name": "Chuyên viên"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 2,
+        "name": "Hành chính"
+      },
+      "id": 9
+    },
+    {
+      "name": "Tiến",
+      "dateOfBirth": "1994-06-05",
+      "address": "Pleiku",
+      "phoneNumber": "0944526325",
+      "idCard": "044265232521",
+      "email": "tien@gmail.com",
+      "gender": "true",
+      "position": {
+        "id": 4,
+        "name": "Giám sát"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale - marketing"
+      },
+      "id": 10
+    },
+    {
+      "name": "Hoàng Luện",
+      "dateOfBirth": "2000-01-01",
+      "address": "Quảng Nam",
+      "phoneNumber": "0944524147",
+      "idCard": "044214782589",
+      "email": "luyenngu@gmail.com",
+      "gender": "null",
+      "position": {
+        "id": 3,
+        "name": "Chuyên viên"
+      },
+      "level": {
+        "id": 4,
+        "name": "Sau đại học"
+      },
+      "division": {
+        "id": 2,
+        "name": "Hành chính"
+      },
+      "id": 11
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "Chuyên viên"
+    },
+    {
+      "id": 4,
+      "name": "Giám sát"
+    },
+    {
+      "id": 5,
+      "name": "Quản lí"
+    },
+    {
+      "id": 5,
+      "name": "Giám đốc"
+    }
+  ],
+  "level": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    },
+    {
+      "id": 4,
+      "name": "Sau đại học"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale - Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lí"
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Hajlong",
+      "area": 1000,
+      "cost": 500,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 10,
+      "numberOfFloor": 3,
+      "poolArea": 50,
+      "status": false,
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "serviceType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hàn Lâm",
+      "area": 1500,
+      "cost": 900,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 15,
+      "numberOfFloor": 2,
+      "poolArea": 50,
+      "status": false,
+      "rentType": {
+        "id": 3,
+        "name": "Tuần"
+      },
+      "serviceType": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Nupakachi",
+      "area": 10000,
+      "cost": 9999,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 20,
+      "numberOfFloor": 3,
+      "poolArea": 100,
+      "status": true,
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "serviceType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Sương Nhi",
+      "area": 300,
+      "cost": 300,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 5,
+      "numberOfFloor": null,
+      "poolArea": null,
+      "status": false,
+      "rentType": {
+        "id": 1,
+        "name": "Giờ"
+      },
+      "serviceType": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hajime",
+      "area": 3000,
+      "cost": 2555,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 15,
+      "numberOfFloor": 2,
+      "poolArea": 50,
+      "status": false,
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "serviceType": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nupakachi2",
+      "area": 1000,
+      "cost": 500,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 10,
+      "numberOfFloor": 3,
+      "poolArea": 75,
+      "status": false,
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "serviceType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Hajlong2",
+      "area": 1000,
+      "cost": 500,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 10,
+      "numberOfFloor": 3,
+      "poolArea": 3,
+      "status": false,
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "serviceType": {
+        "id": 3,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Jaiz",
+      "area": 500,
+      "cost": 500,
+      "description": "None",
+      "image": "image",
+      "amountPeople": 10,
+      "numberOfFloor": null,
+      "poolArea": null,
+      "status": false,
+      "rentType": {
+        "id": 1,
+        "name": "Giờ"
+      },
+      "serviceType": {
+        "id": 1,
+        "name": "Room"
+      }
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Giờ"
+    },
+    {
+      "id": 2,
+      "name": "Ngày"
+    },
+    {
+      "id": 3,
+      "name": "Tuần"
+    },
+    {
+      "id": 4,
+      "name": "Tháng"
+    },
+    {
+      "id": 5,
+      "name": "Năm"
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "name": "Room"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Villa"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "startDay": "2021/01/01",
+      "endDay": "2021/01/03",
+      "deposit": 500,
+      "totalMoney": 3000,
+      "employee": {
+        "name": "Thanh Luyen",
+        "dateOfBirth": "1992-06-05",
+        "gender": "true",
+        "address": "Quang Tri",
+        "idCard": "045236251478",
+        "phoneNumber": "094512362541",
+        "email": "luyen@gmail.com",
+        "position": {
+          "id": 4,
+          "name": "Giám sát"
+        },
+        "level": {
+          "id": 4,
+          "name": "Sau đại học"
+        },
+        "division": {
+          "id": 4,
+          "name": "Quản lí"
+        },
+        "id": 5
+      },
+      "customer": {
+        "name": "Trần Công Phước",
+        "dateOfBirth": "2000-01-01",
+        "address": "Lê Thủy - Quảng Bình",
+        "phoneNumber": "0944524135",
+        "idCard": "044200002961",
+        "email": "teo@gmail.com",
+        "gender": "true",
+        "customerType": {
+          "id": 5,
+          "name": "Platinum"
+        },
+        "id": 6
+      },
+      "service": {
+        "id": 1,
+        "name": "Hajlong",
+        "area": 1000,
+        "cost": 500,
+        "description": "None",
+        "image": "image",
+        "amountPeople": 10,
+        "numberOfFloor": 3,
+        "poolArea": 50,
+        "status": false,
+        "rentType": {
+          "id": 2,
+          "name": "Ngày"
+        },
+        "serviceType": {
+          "id": 3,
+          "name": "Villa"
+        }
+      }
+    },
+    {
+      "customer": {
+        "name": "Hoang Tu",
+        "dateOfBirth": "20000-03-05",
+        "gender": "true",
+        "address": "Quang Nam",
+        "idCard": "04452362512",
+        "phoneNumber": "0944524136",
+        "email": "hoangtu@gmail.com",
+        "customerType": {
+          "id": 2,
+          "name": "Sliver"
+        },
+        "id": 4
+      },
+      "employee": {
+        "name": "Thanh Luyen",
+        "dateOfBirth": "1992-06-05",
+        "gender": "true",
+        "address": "Quang Tri",
+        "idCard": "045236251478",
+        "phoneNumber": "094512362541",
+        "email": "luyen@gmail.com",
+        "position": {
+          "id": 4,
+          "name": "Giám sát"
+        },
+        "level": {
+          "id": 4,
+          "name": "Sau đại học"
+        },
+        "division": {
+          "id": 4,
+          "name": "Quản lí"
+        },
+        "id": 5
+      },
+      "service": {
+        "id": 2,
+        "name": "Hàn Lâm",
+        "area": 1500,
+        "cost": 900,
+        "description": "None",
+        "image": "image",
+        "amountPeople": 15,
+        "numberOfFloor": 2,
+        "poolArea": 50,
+        "status": false,
+        "rentType": {
+          "id": 3,
+          "name": "Tuần"
+        },
+        "serviceType": {
+          "id": 2,
+          "name": "House"
+        }
+      },
+      "startDay": "2021-01-07",
+      "endDay": "2021-01-14",
+      "deposit": 0,
+      "totalMoney": 6300,
+      "id": 2
+    },
+    {
+      "customer": {
+        "name": "Hoang Tu",
+        "dateOfBirth": "20000-03-05",
+        "gender": "true",
+        "address": "Quang Nam",
+        "idCard": "04452362512",
+        "phoneNumber": "0944524136",
+        "email": "hoangtu@gmail.com",
+        "customerType": {
+          "id": 2,
+          "name": "Sliver"
+        },
+        "id": 4
+      },
+      "employee": {
+        "name": "Tran Cong Phuoc",
+        "dateOfBirth": "2000-01-01",
+        "address": "Quang BInh",
+        "phoneNumber": "0944524136",
+        "idCard": "044200002962",
+        "email": "teopro@gmail.com",
+        "gender": "false",
+        "position": {
+          "id": 6,
+          "name": "Giám đốc"
+        },
+        "level": {
+          "id": 4,
+          "name": "Sau đại học"
+        },
+        "division": {
+          "id": 4,
+          "name": "Quản lí"
+        },
+        "id": 2
+      },
+      "service": {
+        "id": 4,
+        "name": "Sương Nhi",
+        "area": 300,
+        "cost": 300,
+        "description": "None",
+        "image": "image",
+        "amountPeople": 5,
+        "numberOfFloor": null,
+        "poolArea": null,
+        "status": false,
+        "rentType": {
+          "id": 1,
+          "name": "Giờ"
+        },
+        "serviceType": {
+          "id": 3,
+          "name": "Room"
+        }
+      },
+      "startDay": "2021-01-01",
+      "endDay": "2021-01-08",
+      "deposit": 0,
+      "totalMoney": 3100,
+      "id": 3
+    },
+    {
+      "customer": {
+        "name": "Tran Cong Phuoc",
+        "dateOfBirth": "2000-01-01",
+        "address": "Quang BInh",
+        "phoneNumber": "0944524136",
+        "idCard": "044200002962",
+        "email": "teopro@gmail.com",
+        "gender": "false",
+        "customerType": {
+          "id": 5,
+          "name": "Platinum"
+        },
+        "id": 2
+      },
+      "employee": {
+        "name": "Thanh Luyen",
+        "dateOfBirth": "1992-06-05",
+        "gender": "true",
+        "address": "Quang Tri",
+        "idCard": "045236251478",
+        "phoneNumber": "094512362541",
+        "email": "luyen@gmail.com",
+        "position": {
+          "id": 4,
+          "name": "Giám sát"
+        },
+        "level": {
+          "id": 4,
+          "name": "Sau đại học"
+        },
+        "division": {
+          "id": 4,
+          "name": "Quản lí"
+        },
+        "id": 5
+      },
+      "service": {
+        "id": 2,
+        "name": "Hàn Lâm",
+        "area": 1500,
+        "cost": 900,
+        "description": "None",
+        "image": "image",
+        "amountPeople": 15,
+        "numberOfFloor": 2,
+        "poolArea": 50,
+        "status": false,
+        "rentType": {
+          "id": 3,
+          "name": "Tuần"
+        },
+        "serviceType": {
+          "id": 2,
+          "name": "House"
+        }
+      },
+      "startDay": "2021-01-07",
+      "endDay": "2021-01-15",
+      "deposit": 0,
+      "totalMoney": 9000,
+      "id": 4
+    }
+  ],
+  "attachService": [
+    {
+      "id": 1,
+      "name": "Massage",
+      "cost": 100,
+      "amount": 50
+    },
+    {
+      "id": 2,
+      "name": "Karaoke",
+      "cost": 200,
+      "amount": 40
+    },
+    {
+      "id": 3,
+      "name": "Drink",
+      "cost": 300,
+      "amount": 30
+    },
+    {
+      "id": 4,
+      "name": "Food",
+      "cost": 400,
+      "amount": 20
+    },
+    {
+      "id": 5,
+      "name": "Car",
+      "cost": 500,
+      "amount": 10
+    }
+  ],
+  "contractDetail": [
+    {
+      "attachService": {
+        "id": 1,
+        "name": "Massage",
+        "cost": 100,
+        "amount": "4"
+      },
+      "amount": "4",
+      "contract": {
+        "customer": {
+          "name": "Hoang Tu",
+          "dateOfBirth": "20000-03-05",
+          "gender": "true",
+          "address": "Quang Nam",
+          "idCard": "04452362512",
+          "phoneNumber": "0944524136",
+          "email": "hoangtu@gmail.com",
+          "customerType": {
+            "id": 2,
+            "name": "Sliver"
+          },
+          "id": 4
+        },
+        "employee": {
+          "name": "Tran Cong Phuoc",
+          "dateOfBirth": "2000-01-01",
+          "address": "Quang BInh",
+          "phoneNumber": "0944524136",
+          "idCard": "044200002962",
+          "email": "teopro@gmail.com",
+          "gender": "false",
+          "position": {
+            "id": 6,
+            "name": "Giám đốc"
+          },
+          "level": {
+            "id": 4,
+            "name": "Sau đại học"
+          },
+          "division": {
+            "id": 4,
+            "name": "Quản lí"
+          },
+          "id": 2
+        },
+        "service": {
+          "id": 4,
+          "name": "Sương Nhi",
+          "area": 300,
+          "cost": 300,
+          "description": "None",
+          "image": "image",
+          "amountPeople": 5,
+          "numberOfFloor": null,
+          "poolArea": null,
+          "status": false,
+          "rentType": {
+            "id": 1,
+            "name": "Giờ"
+          },
+          "serviceType": {
+            "id": 3,
+            "name": "Room"
+          }
+        },
+        "startDay": "2021-01-01",
+        "endDay": "2021-01-08",
+        "deposit": 0,
+        "totalMoney": 3100,
+        "id": 3
+      },
+      "id": 1
+    },
+    {
+      "attachService": {
+        "id": 3,
+        "name": "Drink",
+        "cost": 300,
+        "amount": "2"
+      },
+      "amount": "2",
+      "contract": {
+        "customer": {
+          "name": "Hoang Tu",
+          "dateOfBirth": "20000-03-05",
+          "gender": "true",
+          "address": "Quang Nam",
+          "idCard": "04452362512",
+          "phoneNumber": "0944524136",
+          "email": "hoangtu@gmail.com",
+          "customerType": {
+            "id": 2,
+            "name": "Sliver"
+          },
+          "id": 4
+        },
+        "employee": {
+          "name": "Tran Cong Phuoc",
+          "dateOfBirth": "2000-01-01",
+          "address": "Quang BInh",
+          "phoneNumber": "0944524136",
+          "idCard": "044200002962",
+          "email": "teopro@gmail.com",
+          "gender": "false",
+          "position": {
+            "id": 6,
+            "name": "Giám đốc"
+          },
+          "level": {
+            "id": 4,
+            "name": "Sau đại học"
+          },
+          "division": {
+            "id": 4,
+            "name": "Quản lí"
+          },
+          "id": 2
+        },
+        "service": {
+          "id": 4,
+          "name": "Sương Nhi",
+          "area": 300,
+          "cost": 300,
+          "description": "None",
+          "image": "image",
+          "amountPeople": 5,
+          "numberOfFloor": null,
+          "poolArea": null,
+          "status": false,
+          "rentType": {
+            "id": 1,
+            "name": "Giờ"
+          },
+          "serviceType": {
+            "id": 3,
+            "name": "Room"
+          }
+        },
+        "startDay": "2021-01-01",
+        "endDay": "2021-01-08",
+        "deposit": 0,
+        "totalMoney": 3100,
+        "id": 3
+      },
+      "id": 2
+    },
+    {
+      "attachService": {
+        "id": 1,
+        "name": "Massage",
+        "cost": 100,
+        "amount": "2"
+      },
+      "amount": "2",
+      "contract": {
+        "customer": {
+          "name": "Tran Cong Phuoc",
+          "dateOfBirth": "2000-01-01",
+          "address": "Quang BInh",
+          "phoneNumber": "0944524136",
+          "idCard": "044200002962",
+          "email": "teopro@gmail.com",
+          "gender": "false",
+          "customerType": {
+            "id": 5,
+            "name": "Platinum"
+          },
+          "id": 2
+        },
+        "employee": {
+          "name": "Thanh Luyen",
+          "dateOfBirth": "1992-06-05",
+          "gender": "true",
+          "address": "Quang Tri",
+          "idCard": "045236251478",
+          "phoneNumber": "094512362541",
+          "email": "luyen@gmail.com",
+          "position": {
+            "id": 4,
+            "name": "Giám sát"
+          },
+          "level": {
+            "id": 4,
+            "name": "Sau đại học"
+          },
+          "division": {
+            "id": 4,
+            "name": "Quản lí"
+          },
+          "id": 5
+        },
+        "service": {
+          "id": 2,
+          "name": "Hàn Lâm",
+          "area": 1500,
+          "cost": 900,
+          "description": "None",
+          "image": "image",
+          "amountPeople": 15,
+          "numberOfFloor": 2,
+          "poolArea": 50,
+          "status": false,
+          "rentType": {
+            "id": 3,
+            "name": "Tuần"
+          },
+          "serviceType": {
+            "id": 2,
+            "name": "House"
+          }
+        },
+        "startDay": "2021-01-07",
+        "endDay": "2021-01-15",
+        "deposit": 0,
+        "totalMoney": 9000,
+        "id": 4
+      },
+      "id": 3
+    },
+    {
+      "attachService": {
+        "id": 4,
+        "name": "Food",
+        "cost": 400,
+        "amount": "4"
+      },
+      "amount": "4",
+      "contract": {
+        "customer": {
+          "name": "Tran Cong Phuoc",
+          "dateOfBirth": "2000-01-01",
+          "address": "Quang BInh",
+          "phoneNumber": "0944524136",
+          "idCard": "044200002962",
+          "email": "teopro@gmail.com",
+          "gender": "false",
+          "customerType": {
+            "id": 5,
+            "name": "Platinum"
+          },
+          "id": 2
+        },
+        "employee": {
+          "name": "Thanh Luyen",
+          "dateOfBirth": "1992-06-05",
+          "gender": "true",
+          "address": "Quang Tri",
+          "idCard": "045236251478",
+          "phoneNumber": "094512362541",
+          "email": "luyen@gmail.com",
+          "position": {
+            "id": 4,
+            "name": "Giám sát"
+          },
+          "level": {
+            "id": 4,
+            "name": "Sau đại học"
+          },
+          "division": {
+            "id": 4,
+            "name": "Quản lí"
+          },
+          "id": 5
+        },
+        "service": {
+          "id": 2,
+          "name": "Hàn Lâm",
+          "area": 1500,
+          "cost": 900,
+          "description": "None",
+          "image": "image",
+          "amountPeople": 15,
+          "numberOfFloor": 2,
+          "poolArea": 50,
+          "status": false,
+          "rentType": {
+            "id": 3,
+            "name": "Tuần"
+          },
+          "serviceType": {
+            "id": 2,
+            "name": "House"
+          }
+        },
+        "startDay": "2021-01-07",
+        "endDay": "2021-01-15",
+        "deposit": 0,
+        "totalMoney": 9000,
+        "id": 4
+      },
+      "id": 4
     }
   ]
 }

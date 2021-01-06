@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatDialogModule} from '@angular/material/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CustomerDeleteComponent} from './component/customer/customer-delete/customer-delete.component';
+import {ToastrModule} from 'ngx-toastr';
 
 
 
@@ -11,7 +12,8 @@ import {CustomerDeleteComponent} from './component/customer/customer-delete/cust
   imports: [
     CommonModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   exports: [],
   entryComponents: [CustomerDeleteComponent]

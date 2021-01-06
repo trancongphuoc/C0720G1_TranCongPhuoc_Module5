@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatDialogModule} from '@angular/material/dialog';
 import {ChildrenComponent} from '../children/children.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     MatDialogModule

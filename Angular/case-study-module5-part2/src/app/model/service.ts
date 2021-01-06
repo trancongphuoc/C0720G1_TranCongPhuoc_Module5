@@ -1,4 +1,5 @@
 import {IRentType} from './rent-type';
+import {IServiceType} from './service-type';
 
 export interface IService {
   id?: number;
@@ -9,6 +10,8 @@ export interface IService {
   image: string;
   amountPeople: number;
   numberOfFloor: number;
+  poolArea: number;
   status: boolean;
   rentType: IRentType;
+  serviceType: IServiceType;
 }
