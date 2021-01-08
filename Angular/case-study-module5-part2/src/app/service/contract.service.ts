@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IContract} from '../model/contract';
 import {Observable} from 'rxjs';
@@ -10,10 +10,15 @@ export class ContractService {
 
   private url = 'http://localhost:3000/contract';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAll(): Observable<IContract[]> {
     return this.http.get<IContract[]>(this.url);
+  }
+
+  getAllByIdCustomer(id: number): Observable<IContract[]> {
+    return this.http.get<IContract[]>(this.url + '?customer.id=' + id);
   }
 
   getById(id: number): Observable<IContract> {

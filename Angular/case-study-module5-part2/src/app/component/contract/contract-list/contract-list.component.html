@@ -1,11 +1,11 @@
-<h1 class="text-center mt-3 mb-4">Danh sách khách hàng</h1>
+<h1 class="text-center mt-3 mb-4">Danh sách hợp đồng</h1>
 
 <div class="d-flex justify-content-around">
   <button routerLink="/contract/booking" class="btn btn-success">Đặt dịch vụ</button>
-  <div class="d-flex justify-content-end">
-    <input class="form-control col-6 border-dark" type="search" placeholder="Nhập tên dịch vụ">
-    <button class="btn btn-primary" type="submit">Search</button>
-  </div>
+<!--  <div class="d-flex justify-content-end">-->
+<!--    <input class="form-control col-6 border-dark" type="search" placeholder="Nhập tên dịch vụ">-->
+<!--    <button class="btn btn-primary" type="submit">Search</button>-->
+<!--  </div>-->
 </div>
 
 <div class="container">
@@ -31,7 +31,7 @@
       <td> {{contract.employee.name}} </td>
       <td> {{contract.customer.name}} </td>
       <td> {{contract.service.name}} </td>
-      <td> <button class="btn btn-primary" [routerLink]="'update/'+contract.id" style="margin-right: 10px"><i class="fa fa-edit"></i></button> <button class="btn btn-danger" style="margin-right: 10px"><i class="fa fa-recycle"></i></button> <button class="btn btn-info" [routerLink]="'detail/'+contract.id"><i class="fa fa-user"></i></button> </td>
+      <td>  <button class="btn btn-info" [routerLink]="'/contract/detail/'+contract.id"><i class="fa fa-info-circle"></i></button><button style="margin-left: 5px" class="btn btn-primary" [routerLink]="'/contract/update/'+contract.id"><i class="fa fa-edit"></i></button> </td>
     </tr>
     </tbody>
   </table>

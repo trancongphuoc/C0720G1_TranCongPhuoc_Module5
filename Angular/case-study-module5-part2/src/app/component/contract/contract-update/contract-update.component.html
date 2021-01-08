@@ -1,0 +1,93 @@
+<!--<div class="container">-->
+<!--  <h1 class="text-center mt-3">Tạo mới khách hàng</h1>-->
+<!--  <form [formGroup]="createFormContract" (ngSubmit)="onSubmit()">-->
+<!--    <div class="mx-5 row">-->
+<!--      <div class="col-6">-->
+<!--        <div>-->
+<!--          <label for="" class="col-form-label">Khách hàng<span class="text-danger">*</span></label>-->
+<!--          <select-->
+<!--            [class]="createFormContract.get('customer').invalid && (createFormContract.get('customer').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched) ? 'border-danger' : ''"-->
+<!--            formControlName="customer" class="form-control">-->
+<!--            <option value="">Chọn khách hàng</option>-->
+<!--            <option *ngFor="let customer of customerList" [value]="customer.id"> {{customer.name}} </option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.get('customer').hasError('required') && (createFormContract.get('customer').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched)">-->
+<!--          Vui lòng chọn khách hàng</p>-->
+<!--        <div>-->
+<!--          <label for="" class="col-form-label">Nhân viên</label>-->
+<!--          <select-->
+<!--            [class]="createFormContract.get('employee').invalid && (createFormContract.get('employee').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched) ? 'border-danger' : ''"-->
+<!--            formControlName="employee" class="form-control">-->
+<!--            <option value="">Chọn nhân viên</option>-->
+<!--            <option *ngFor="let employee of employeeList" [value]="employee.id"> {{employee.name}} </option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.get('employee').hasError('required') && (createFormContract.get('employee').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched)">-->
+<!--          Vui lòng chọn nhân viên</p>-->
+<!--        <div>-->
+<!--          <label for="" class="col-form-label">Dịch vụ<span class="text-danger">*</span></label>-->
+<!--          <select-->
+<!--            [class]="createFormContract.get('service').invalid && (createFormContract.get('service').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched ) ? 'border-danger' : ''"-->
+<!--            (change)="calculateByService()" formControlName="service" class="form-control">-->
+<!--            <option value="">Chọn dịch vụ</option>-->
+<!--            <option *ngFor="let service of serviceList" [value]="service.id"> {{service.name}} </option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.get('service').hasError('required') && (createFormContract.get('service').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched)">-->
+<!--          Vui lòng chọn dịch vụ</p>-->
+<!--        <div class="">-->
+<!--          <label for="" class="col-form-label">Ngày bắt đầu<span class="text-danger">*</span></label>-->
+<!--          <input-->
+<!--            [class]="createFormContract.get('startDay').invalid && createFormContract.get('startDay').touched ? 'border-danger' : ''"-->
+<!--            (change)="calculateByService()" formControlName="startDay" class="form-control" type="date">-->
+<!--        </div>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.get('startDay').hasError('required') && createFormContract.get('startDay').touched">-->
+<!--          Ngày bắt đầu không được để trống</p>-->
+<!--        <div class="">-->
+<!--          <label-->
+<!--            [class]="createFormContract.get('endDay').invalid && createFormContract.get('endDay').touched ? 'border-danger' : ''"-->
+<!--            for="" class="col-form-label">Ngày kết thúc<span class="text-danger">*</span></label>-->
+<!--          <input (change)="calculateByService()" formControlName="endDay" class="form-control" type="date">-->
+<!--        </div>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.get('endDay').hasError('required') && createFormContract.get('endDay').touched">-->
+<!--          Ngày kết thúc không được để trống</p>-->
+<!--        <p class="text-danger errors"-->
+<!--           *ngIf="createFormContract.errors?.dayEndError && createFormContract.get('endDay').touched">-->
+<!--          Ngày kết thúc phải lớn hơn ngày bắt đầu</p>-->
+<!--      </div>-->
+<!--      <div class="col-6">-->
+<!--        <div class="">-->
+<!--          <label for="" class="col-form-label">Tiền đặt cọc</label>-->
+<!--          <input formControlName="deposit" class="form-control" type="text" placeholder="Nhập tiền đặt cọc">-->
+<!--        </div>-->
+<!--        <div class="">-->
+<!--          <label for="" class="col-form-label">Tổng tiền</label>-->
+<!--          <input [value]="totalMoneyTemp" formControlName="totalMoney" class="form-control" type="text" readonly-->
+<!--                 placeholder="Tổng tiền">-->
+<!--        </div>-->
+
+<!--        <div class="mt-5">-->
+<!--          <h5>Dịch vụ đi kèm</h5>-->
+<!--          <div class="row">-->
+<!--            <div *ngFor="let attachService of attachServiceList; let i = index" class="col-6">-->
+<!--              <label for="" class="col-form-label"> {{attachService.name}} : {{attachService.cost}} $/1 </label>-->
+<!--              <input min="0" (change)="calculateByAttachService(i, $event.target.value)" class="form-control"-->
+<!--                     type="number" placeholder="Nhập số lượng">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="d-flex mx-5 mt-4 justify-content-end">-->
+<!--      <button class="btn btn-outline-primary" routerLink="/contract">Quay lại</button>-->
+<!--      <button class="btn btn-outline-success">Xác nhận</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->

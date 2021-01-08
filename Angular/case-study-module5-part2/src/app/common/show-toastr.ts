@@ -30,7 +30,7 @@ export class ShowToastr {
   }
 
   showToastrUpdateError() {
-    this.toastr.error('Vui lòng nhập đúng tất cả các trường', 'Thất bại', {
+    this.toastr.error('Cập nhật thất bại', 'Thất bại', {
       timeOut: 1000
     });
   }
@@ -43,6 +43,13 @@ export class ShowToastr {
 
   showToastrDeleteError() {
     this.toastr.warning('Xóa không thành công', 'Thất bại', {
+      timeOut: 1000
+    });
+  }
+
+
+  showToastrIsNotExistContract() {
+    this.toastr.warning('Chưa có hợp đồng nào', 'Thất bại', {
       timeOut: 1000
     });
   }

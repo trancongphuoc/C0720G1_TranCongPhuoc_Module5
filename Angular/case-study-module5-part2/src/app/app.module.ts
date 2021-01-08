@@ -17,6 +17,12 @@ import { ServiceListComponent } from './component/service/service-list/service-l
 import { ContractListComponent } from './component/contract/contract-list/contract-list.component';
 import { ContractCreateComponent } from './component/contract/contract-create/contract-create.component';
 import { ContractDetailComponent } from './component/contract/contract-detail/contract-detail.component';
+import { CustomerShowContractComponent } from './component/customer/customer-show-contract/customer-show-contract.component';
+import { AttachServiceComponent } from './component/attach-service/attach-service/attach-service.component';
+import { AttachServiceCreateComponent } from './component/attach-service/attach-service-create/attach-service-create.component';
+import { AttachServiceDeleteComponent } from './component/attach-service/attach-service-delete/attach-service-delete.component';
+import { AttachServiceUpdateComponent } from './component/attach-service/attach-service-update/attach-service-update.component';
+import { ContractUpdateComponent } from './component/contract/contract-update/contract-update.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,12 @@ import { ContractDetailComponent } from './component/contract/contract-detail/co
     ContractListComponent,
     ContractCreateComponent,
     ContractDetailComponent,
+    CustomerShowContractComponent,
+    AttachServiceComponent,
+    AttachServiceCreateComponent,
+    AttachServiceDeleteComponent,
+    AttachServiceUpdateComponent,
+    ContractUpdateComponent,
   ],
     imports: [
         BrowserModule,

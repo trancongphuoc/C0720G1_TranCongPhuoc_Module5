@@ -27,6 +27,8 @@ export class CustomerCreateComponent implements OnInit {
 
   public formCreateCustomer: FormGroup;
 
+  public checkValid: boolean = false;
+
   constructor(private customerService: CustomerService,
               private customerTypeService: CustomerTypeService,
               private fb: FormBuilder,
@@ -62,7 +64,7 @@ export class CustomerCreateComponent implements OnInit {
   onSubmit() {
     if (this.formCreateCustomer.invalid) {
       this.showToastr.showToastrRegisterError();
-      console.log( new Date().getFullYear() - new Date(this.formCreateCustomer.value.dateOfBirth).getFullYear() );
+      this.checkValid = true;
     } else {
 
       // Gán lại customer Type

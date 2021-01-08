@@ -1,1 +1,57 @@
-<p>contract-detail works!</p>
+<div class="container">
+  <h1 class="text-center mt-3">Tạo mới khách hàng</h1>
+  <div>
+    <div class="mx-5 row">
+      <div class="col-6">
+        <div>
+          <label for="" class="col-form-label">Khách hàng </label><a [routerLink]="'/customer/detail/'+contract.customer.id"  style="font-size: 15px"> Xem thông tin</a>
+          <input type="text" class="form-control" [value]="contract.customer.name" readonly>
+        </div>
+        <div>
+          <label for="" class="col-form-label">Nhân viên</label>
+          <input type="text" class="form-control" [value]="contract.employee.name" readonly>
+        </div>
+        <div>
+          <label for="" class="col-form-label">Dịch vụ<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" [value]="contract.service.name" readonly>
+        </div>
+
+        <div class="">
+          <label for="" class="col-form-label">Ngày bắt đầu<span class="text-danger">*</span></label>
+          <input [value]="contract.startDay" class="form-control" type="date" readonly>
+        </div>
+        <div class="">
+          <label
+            for="" class="col-form-label">Ngày kết thúc</label>
+          <input [value]="contract.startDay" class="form-control" type="date" readonly>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="">
+          <label for="" class="col-form-label">Tiền đặt cọc</label>
+          <input [value]="contract.deposit" class="form-control" type="text" placeholder="Nhập tiền đặt cọc" readonly>
+        </div>
+        <div class="">
+          <label for="" class="col-form-label">Tổng tiền</label>
+          <input [value]="contract.totalMoney" class="form-control" type="text" readonly
+                 placeholder="Tổng tiền">
+        </div>
+
+        <div class="mt-5" *ngIf="contractDetailList.length > 0">
+          <h5>Dịch vụ đi kèm</h5>
+          <div class="row">
+            <div class="col-6" *ngFor="let contractDetail of contractDetailList">
+              <label for="" class="col-form-label"> {{contractDetail.attachService.name}} : {{contractDetail.attachService.cost}} $/1 </label>
+              <input min="0" class="form-control" [value]="contractDetail.amount"
+                     type="number" placeholder="Nhập số lượng" readonly>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="d-flex mx-5 mt-4 justify-content-end">
+      <button class="btn btn-outline-primary" routerLink="/contract">Quay lại</button>
+    </div>
+  </div>
+</div>

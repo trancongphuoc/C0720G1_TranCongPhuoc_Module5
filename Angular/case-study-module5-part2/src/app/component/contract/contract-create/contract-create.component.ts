@@ -59,11 +59,20 @@ export class ContractCreateComponent implements OnInit {
     this.getAllService();
     this.getAllAttachService();
 
+    let dayNow = new Date();
+
+    let date = dayNow.getDate() < 10 ? 0 + '' + dayNow.getDate() : dayNow.getDate();
+    let month = dayNow.getMonth() < 10 ? 0 + '' + (dayNow.getMonth() + 1) : dayNow.getMonth() + 1;
+    let year = dayNow.getFullYear();
+
+    let startDay = year + '-' + month + '-' + date;
+
+
     this.createFormContract = this.fb.group({
       customer: ['', [Validators.required]],
       employee: ['', [Validators.required]],
       service: ['', [Validators.required]],
-      startDay: ['', Validators.required],
+      startDay: [startDay, Validators.required],
       endDay: ['', [Validators.required]],
       deposit: [0, Validators.required],
       totalMoney: [0, Validators.required],
@@ -86,6 +95,14 @@ export class ContractCreateComponent implements OnInit {
   getAllService() {
     this.serviceDao.getAll().subscribe((data: IService[]) => {
       this.serviceList = data;
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].status === true) {
+          data.splice(i,1);
+        }
+      }
+
+      this.serviceList = data;
     }, error => console.log(error));
   }
 
@@ -103,11 +120,12 @@ export class ContractCreateComponent implements OnInit {
 
   calculateByService() {
     this.moneyService = 0;
+    let difference = dateDiff(parseDate(this.createFormContract.value.startDay), parseDate(this.createFormContract.value.endDay));
 
-    if (this.createFormContract.value.service !== '' && this.createFormContract.value.endDay !== '' && this.createFormContract.value.startDay !== '') {
+
+    if (this.createFormContract.value.service !== '' && this.createFormContract.value.endDay !== '' && this.createFormContract.value.startDay !== '' && difference > 0) {
       this.serviceDao.getById(this.createFormContract.value.service).subscribe((data: IService) => {
 
-        let difference = dateDiff(parseDate(this.createFormContract.value.startDay), parseDate(this.createFormContract.value.endDay));
         this.moneyService = data.cost * difference;
 
         this.totalMoneyTemp = this.moneyService + this.moneyAttachService;
@@ -134,8 +152,6 @@ export class ContractCreateComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.createFormContract);
-
     if (this.createFormContract.invalid) {
       this.showToastr.showToastrRegisterError();
       return;
@@ -156,38 +172,46 @@ export class ContractCreateComponent implements OnInit {
     for (let e of this.serviceList) {
       if (e.id == this.createFormContract.value.service) {
         this.createFormContract.value.service = e;
+
+        this.createFormContract.value.service.status = true;
+
+        this.serviceDao.update(this.createFormContract.value.service, e.id).subscribe();
       }
     }
 
     this.createFormContract.value.totalMoney = this.totalMoneyTemp;
 
-    // this.contractService.create(this.createFormContract.value).subscribe(data => {
-    //
-    //
-    //     for (let e of this.attachServiceList) {
-    //       if (e.amount > 0) {
-    //         let contractDetail: IContractDetail = {
-    //           attachService: e,
-    //           amount: e.amount,
-    //           contract: data
-    //         };
-    //
-    //         this.contractDetailService.create(contractDetail).subscribe(data => {
-    //           console.log(data);
-    //         });
-    //
-    //       }
-    //     }
-    //
-    //
-    //   }, error => console.log(error),
-    //   () => {
-    //     this.router.navigateByUrl('/contract');
-    //     this.showToastr.showToastrRegisterSuccess();
-    //   });
+    this.contractService.create(this.createFormContract.value).subscribe(data => {
 
 
-    console.log(this.createFormContract.value);
+        for (let e of this.attachServiceList) {
+          if (e.amount > 0) {
+            let contractDetail: IContractDetail = {
+              attachService: e,
+              amount: e.amount,
+              contract: data
+            };
+
+            this.contractDetailService.create(contractDetail).subscribe(data => {
+              console.log(data);
+            });
+
+            this.attachServiceDao.getById(e.id).subscribe((data: IAttachService) => {
+              data.amount = data.amount - e.amount;
+
+              this.attachServiceDao.update(data, data.id).subscribe();
+            }, () => {
+            });
+
+          }
+        }
+
+
+      }, error => console.log(error),
+      () => {
+        this.router.navigateByUrl('/contract');
+        this.showToastr.showToastrRegisterSuccess();
+      });
 
   }
 }

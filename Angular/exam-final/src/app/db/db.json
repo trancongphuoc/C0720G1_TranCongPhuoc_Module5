@@ -1,0 +1,68 @@
+{
+  "khachHang": [
+    {
+      "id": 1,
+      "name": "Phuoc1"
+    },
+    {
+      "id": 2,
+      "name": "Phuoc2"
+    },
+    {
+      "id": 3,
+      "name": "Phuoc3"
+    }
+  ],
+  "soTietKiem": [
+    {
+      "ngayMoSo": "2021-01-16",
+      "ngayGui": "2021-01-08",
+      "soTienGui": 200000100,
+      "uuDai": "dsnfjds",
+      "laiXuat": 8,
+      "kyHan": {
+        "id": 1,
+        "name": "3 tháng"
+      },
+      "khachHang": {
+        "id": 2,
+        "name": "Phuocáád"
+      },
+      "id": 2
+    },
+    {
+      "id": 5,
+      "ngayMoSo": "2020-01-01",
+      "ngayGui": "2020-01-02",
+      "soTienGui": 200000100,
+      "laiXuat": 8,
+      "uuDai": "Ao mua",
+      "khachHang": {
+        "id": 1,
+        "name": "Phuoc1"
+      },
+      "kyHan": {
+        "id": 1,
+        "name": "3 tháng"
+      }
+    }
+  ],
+  "kyHan": [
+    {
+      "id": 1,
+      "name": "3 tháng"
+    },
+    {
+      "id": 2,
+      "name": "6 tháng"
+    },
+    {
+      "id": 3,
+      "name": "12 tháng"
+    },
+    {
+      "id": 4,
+      "name": "Không kỳ hạn"
+    }
+  ]
+}

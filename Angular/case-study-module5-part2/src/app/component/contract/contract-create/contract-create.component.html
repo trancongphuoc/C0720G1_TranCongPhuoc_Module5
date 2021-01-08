@@ -6,26 +6,26 @@
         <div>
           <label for="" class="col-form-label">Khách hàng<span class="text-danger">*</span></label>
           <select
-            [class]="createFormContract.get('customer').invalid && createFormContract.get('customer').touched ? 'border-danger' : ''"
+            [class]="createFormContract.get('customer').invalid && (createFormContract.get('customer').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched) ? 'border-danger' : ''"
             formControlName="customer" class="form-control">
             <option value="">Chọn khách hàng</option>
             <option *ngFor="let customer of customerList" [value]="customer.id"> {{customer.name}} </option>
           </select>
         </div>
         <p class="text-danger errors"
-           *ngIf="createFormContract.get('customer').hasError('required') && createFormContract.get('customer').touched">
+           *ngIf="createFormContract.get('customer').hasError('required') && (createFormContract.get('customer').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched)">
           Vui lòng chọn khách hàng</p>
         <div>
           <label for="" class="col-form-label">Nhân viên</label>
           <select
-            [class]="createFormContract.get('employee').invalid && createFormContract.get('employee').touched ? 'border-danger' : ''"
+            [class]="createFormContract.get('employee').invalid && (createFormContract.get('employee').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched) ? 'border-danger' : ''"
             formControlName="employee" class="form-control">
             <option value="">Chọn nhân viên</option>
             <option *ngFor="let employee of employeeList" [value]="employee.id"> {{employee.name}} </option>
           </select>
         </div>
         <p class="text-danger errors"
-           *ngIf="createFormContract.get('employee').hasError('required') && createFormContract.get('employee').touched">
+           *ngIf="createFormContract.get('employee').hasError('required') && (createFormContract.get('employee').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched)">
           Vui lòng chọn nhân viên</p>
         <div>
           <label for="" class="col-form-label">Dịch vụ<span class="text-danger">*</span></label>
@@ -33,7 +33,7 @@
             [class]="createFormContract.get('service').invalid && (createFormContract.get('service').touched || createFormContract.get('startDay').touched || createFormContract.get('endDay').touched ) ? 'border-danger' : ''"
             (change)="calculateByService()" formControlName="service" class="form-control">
             <option value="">Chọn dịch vụ</option>
-            <option *ngFor="let service of serviceList" [value]="service.id"> {{service.name}} </option>
+            <option *ngFor="let service of serviceList;" [value]="service.id"> {{service.name}} </option>
           </select>
         </div>
         <p class="text-danger errors"
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="d-flex mx-5 mt-4 justify-content-end">
-      <button class="btn btn-outline-primary" routerLink="/customer">Quay lại</button>
+      <button class="btn btn-outline-primary" routerLink="/contract">Quay lại</button>
       <button class="btn btn-outline-success">Xác nhận</button>
     </div>
   </form>

@@ -1,0 +1,77 @@
+<div class="container mt-3">
+  <h2 class="text-center mb-2">Cập nhật</h2>
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label>Mã số sổ</label>
+        <input [value]="soTietKiem.id" readonly  type="text" class="form-control" >
+      </div>
+      <div>
+        <label>Mã khách hàng</label>
+        <input [value]="soTietKiem.khachHang.id" readonly type="text" class="form-control" >
+      </div>
+      <div>
+        <label>Tên khách hàng</label>
+        <input formControlName="khachHang" type="text" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('khachHang').hasError('pattern') && (updateForm.get('khachHang').touched || check)">Tên khách hàng chỉ được nhập chữ</p>
+      <p class="text-danger" *ngIf="updateForm.get('khachHang').hasError('required') && (updateForm.get('khachHang').touched || check)">Tên khách hàng không được để  trống</p>
+
+      <div>
+        <label>Ngày mở sổ</label>
+        <input formControlName="ngayMoSo" type="date" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger errors"
+         *ngIf="updateForm.errors?.dayEndError && (updateForm.get('ngayGui').touched || updateForm.get('ngayMoSo').touched)">
+        Ngày mở sổ phải lớn hơn hoặc bằng ngày gửi</p>
+      <p class="text-danger" *ngIf="updateForm.get('ngayMoSo').hasError('required') && (updateForm.get('ngayMoSo').touched || check)">Ngày mở sổ không được để  trống</p>
+
+      <div>
+        <label>Ngày bắt đầu gửi</label>
+        <input formControlName="ngayGui" type="date" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('ngayGui').hasError('dayError') && (updateForm.get('ngayGui').touched || check)">Ngày bắt đầu gửi phải lớn hơn hoặc bằng ngày hiện tại</p>
+      <p class="text-danger" *ngIf="updateForm.get('ngayGui').hasError('required') && (updateForm.get('ngayGui').touched || check)">Ngày bắt đầu gửi không được để  trống</p>
+
+    </div>
+
+    <div class="col-6">
+      <div>
+        <label>Kỳ hàn</label>
+        <select formControlName="kyHan"  class="form-control" >
+          <option value="" >Chọn kỳ hàn</option>
+          <option *ngFor="let k of kyHanList" [value]="k.id"> {{k.name}}</option>
+        </select>
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('kyHan').hasError('required') && (updateForm.get('kyHan').touched || check)">Kỳ hạn không được để  trống</p>
+
+      <div>
+        <label>Số tiền gửi</label>
+        <input formControlName="soTienGui" type="number" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('soTienGui').hasError('min') && (updateForm.get('soTienGui').touched || check)">Số tiền gửi phải lớn hơn 10000000</p>
+      <p class="text-danger" *ngIf="updateForm.get('soTienGui').hasError('pattern') && (updateForm.get('soTienGui').touched || check)">Nhập số tiền gửi đúng định dạng</p>
+      <p class="text-danger" *ngIf="updateForm.get('soTienGui').hasError('required') && (updateForm.get('soTienGui').touched || check)">Số tiền gửi không được để  trống</p>
+
+      <div>
+        <label>Lãi xuất</label>
+        <input formControlName="laiXuat" type="text" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('laiXuat').hasError('required') && (updateForm.get('laiXuat').touched || check)">Lãi xuất không được để  trống</p>
+
+      <div>
+        <label>Ưu đãi</label>
+        <input formControlName="uuDai" type="text" class="form-control" placeholder="Nhập họ và tên">
+      </div>
+      <p class="text-danger" *ngIf="updateForm.get('uuDai').hasError('required') && (updateForm.get('uuDai').touched || check)">Ưu đãi không được để  trống</p>
+
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-3">
+    <button routerLink="/list" style="width: 110px" class="btn btn-primary">Quay lại</button>
+    <button style="margin-left: 5px; width: 110px;" class="btn btn-success">Xác nhận</button>
+  </div>
+  </form>
+</div>
